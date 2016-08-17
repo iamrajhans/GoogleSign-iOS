@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05D38EDB993F728820F3155E /* Pods_SignInDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9000FAE5EF502CAD90150246 /* Pods_SignInDemo.framework */; };
+		286461081D650B780061722C /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286461071D650B780061722C /* SignOutViewController.swift */; };
 		289849BF1D620646001A3180 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289849BE1D620646001A3180 /* AppDelegate.swift */; };
 		289849C11D620646001A3180 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289849C01D620646001A3180 /* ViewController.swift */; };
 		289849C41D620646001A3180 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 289849C21D620646001A3180 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		0E949C56AC21F5C347F1D691 /* Pods-SignInDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignInDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SignInDemoTests/Pods-SignInDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2549264A7372AE918A8B93B3 /* Pods-SignInDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SignInDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SignInDemo/Pods-SignInDemo.release.xcconfig"; sourceTree = "<group>"; };
+		286461071D650B780061722C /* SignOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
 		289849BB1D620646001A3180 /* SignInDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SignInDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		289849BE1D620646001A3180 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		289849C01D620646001A3180 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				289849F31D62070D001A3180 /* GoogleService-Info.plist */,
 				289849C51D620646001A3180 /* SignInDemo.xcdatamodeld */,
 				289849EF1D6206D8001A3180 /* SignInDemo-Bridging-Header.h */,
+				286461071D650B780061722C /* SignOutViewController.swift */,
 			);
 			path = SignInDemo;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 			files = (
 				289849C71D620646001A3180 /* SignInDemo.xcdatamodeld in Sources */,
 				289849C11D620646001A3180 /* ViewController.swift in Sources */,
+				286461081D650B780061722C /* SignOutViewController.swift in Sources */,
 				289849BF1D620646001A3180 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

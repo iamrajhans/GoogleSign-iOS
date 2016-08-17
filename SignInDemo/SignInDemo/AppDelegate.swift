@@ -140,6 +140,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
                 "ToggleAuthUINotification",
                 object: nil,
                 userInfo: ["statusText": "Signed in user:\n\(fullName)"])
+            
+             let myStoryBoard:UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
+            
+            let signOutPage =  myStoryBoard.instantiateViewControllerWithIdentifier("SignOutController") as! SignOutViewController
+            
+            let signOutPageNav = UINavigationController(rootViewController:signOutPage)
+            
+            self.window?.rootViewController = signOutPageNav
             // ...
         } else {
             print("\(error.localizedDescription)")
