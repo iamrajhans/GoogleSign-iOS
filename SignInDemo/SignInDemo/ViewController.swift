@@ -11,15 +11,27 @@ import UIKit
 class ViewController: UIViewController ,GIDSignInUIDelegate{
 
     
-    @IBOutlet weak var SignIn: GIDSignInButton!
+    @IBOutlet weak var SignInButton: GIDSignInButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().signInSilently()
+        
     }
 
+    func signIn(signIn: GIDSignIn!, presentViewController viewController: UIViewController!) {
+        self.presentViewController(viewController, animated: true, completion: nil)
+    }
+    
+    func signIn(signIn: GIDSignIn!, dismissViewController viewController: UIViewController!) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
+        //
+    }
     
 }
 
