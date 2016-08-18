@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--SignIn-->
@@ -46,18 +47,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjk-IW-DUb">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjk-IW-DUb">
                                 <rect key="frame" x="146" y="319" width="83" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="Vw2-AC-neq"/>
+                                </constraints>
                                 <state key="normal" title="Sign out"/>
                                 <connections>
                                     <action selector="SignOutButton:" destination="Pwr-aF-wpe" eventType="touchUpInside" id="NM3-fn-icg"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGc-FO-0I9">
+                                <rect key="frame" x="163" y="191" width="45" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yP2-KR-iKk">
+                                <rect key="frame" x="167" y="246" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fr2-z0-4l9">
+                                <rect key="frame" x="65" y="399" width="240" height="163"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GGc-FO-0I9" firstAttribute="trailing" secondItem="yP2-KR-iKk" secondAttribute="trailing" id="2bc-L2-RrM"/>
+                            <constraint firstItem="Jjk-IW-DUb" firstAttribute="top" secondItem="yP2-KR-iKk" secondAttribute="bottom" constant="52" id="57f-iY-DOq"/>
+                            <constraint firstItem="yP2-KR-iKk" firstAttribute="centerX" secondItem="Jjk-IW-DUb" secondAttribute="centerX" id="AYi-2F-roc"/>
+                            <constraint firstItem="soN-bd-8aC" firstAttribute="top" secondItem="Fr2-z0-4l9" secondAttribute="bottom" constant="105" id="J53-ZZ-stv"/>
+                            <constraint firstItem="Jjk-IW-DUb" firstAttribute="centerY" secondItem="7bx-IL-hmf" secondAttribute="centerY" id="Kvl-3g-QeW"/>
+                            <constraint firstItem="yP2-KR-iKk" firstAttribute="top" secondItem="GGc-FO-0I9" secondAttribute="bottom" constant="34" id="QMk-vy-prC"/>
+                            <constraint firstItem="yP2-KR-iKk" firstAttribute="centerX" secondItem="7bx-IL-hmf" secondAttribute="centerX" id="R5p-Xa-Zmu"/>
+                            <constraint firstItem="Fr2-z0-4l9" firstAttribute="top" secondItem="Jjk-IW-DUb" secondAttribute="bottom" constant="50" id="eim-Om-e2a"/>
+                            <constraint firstItem="GGc-FO-0I9" firstAttribute="centerX" secondItem="Fr2-z0-4l9" secondAttribute="centerX" id="nqL-HQ-gMg"/>
+                            <constraint firstItem="Fr2-z0-4l9" firstAttribute="leading" secondItem="7bx-IL-hmf" secondAttribute="leadingMargin" constant="49" id="qe5-x8-bs5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Signout Page " id="5jA-qn-X9y"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailAddress" destination="yP2-KR-iKk" id="cM7-2m-dRH"/>
+                        <outlet property="userProfileImage" destination="Fr2-z0-4l9" id="fhs-b5-N1A"/>
+                        <outlet property="username" destination="GGc-FO-0I9" id="yol-Kw-bGF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5E-an-Bbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
