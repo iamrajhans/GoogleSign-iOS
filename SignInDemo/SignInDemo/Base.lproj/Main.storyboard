@@ -18,17 +18,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7f2-1i-ePQ" customClass="GIDSignInButton">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7f2-1i-ePQ" customClass="GIDSignInButton">
                                 <rect key="frame" x="92" y="310" width="190" height="47"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qc8-mf-DgI">
+                                <rect key="frame" x="63" y="405" width="248" height="128"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1u-Tc-6Ss">
+                                <rect key="frame" x="20" y="579" width="94" height="30"/>
+                                <state key="normal" title="Take photo"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mhe-hX-fo7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf8-g5-jrI">
+                                <rect key="frame" x="246" y="579" width="109" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Select image"/>
+                                <connections>
+                                    <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sDq-SW-vGk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="76" id="8bf-P6-01J"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qc8-mf-DgI" secondAttribute="bottom" constant="134" id="Ksi-gm-blp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qc8-mf-DgI" secondAttribute="trailing" constant="48" id="Uex-re-7mY"/>
+                            <constraint firstItem="Qc8-mf-DgI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="47" id="icp-6f-oKY"/>
+                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kCn-rl-v2H"/>
+                            <constraint firstItem="Qc8-mf-DgI" firstAttribute="top" secondItem="7f2-1i-ePQ" secondAttribute="bottom" constant="48" id="miF-Fs-rKP"/>
+                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="246" id="rgP-hH-lT8"/>
+                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y49-Al-hZ4"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SignIn" id="8OV-ZF-SXI"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="SignInButton" destination="7f2-1i-ePQ" id="Qag-90-5cR"/>
+                        <outlet property="imageView" destination="Qc8-mf-DgI" id="Ipp-d9-Nti"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -50,7 +79,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjk-IW-DUb">
                                 <rect key="frame" x="146" y="319" width="83" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="83" id="Vw2-AC-neq"/>
+                                    <constraint firstAttribute="width" constant="83" id="Rad-yS-Mb5"/>
                                 </constraints>
                                 <state key="normal" title="Sign out"/>
                                 <connections>
@@ -70,22 +99,44 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fr2-z0-4l9">
-                                <rect key="frame" x="65" y="399" width="240" height="163"/>
+                                <rect key="frame" x="40" y="385" width="309" height="233"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="112" id="pt4-fe-kg0"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pt4-fe-kg0"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="xH2-iA-vnI" appends="YES" id="kQr-a6-tjQ"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GGc-FO-0I9" firstAttribute="trailing" secondItem="yP2-KR-iKk" secondAttribute="trailing" id="2bc-L2-RrM"/>
-                            <constraint firstItem="Jjk-IW-DUb" firstAttribute="top" secondItem="yP2-KR-iKk" secondAttribute="bottom" constant="52" id="57f-iY-DOq"/>
-                            <constraint firstItem="yP2-KR-iKk" firstAttribute="centerX" secondItem="Jjk-IW-DUb" secondAttribute="centerX" id="AYi-2F-roc"/>
-                            <constraint firstItem="soN-bd-8aC" firstAttribute="top" secondItem="Fr2-z0-4l9" secondAttribute="bottom" constant="105" id="J53-ZZ-stv"/>
-                            <constraint firstItem="Jjk-IW-DUb" firstAttribute="centerY" secondItem="7bx-IL-hmf" secondAttribute="centerY" id="Kvl-3g-QeW"/>
-                            <constraint firstItem="yP2-KR-iKk" firstAttribute="top" secondItem="GGc-FO-0I9" secondAttribute="bottom" constant="34" id="QMk-vy-prC"/>
-                            <constraint firstItem="yP2-KR-iKk" firstAttribute="centerX" secondItem="7bx-IL-hmf" secondAttribute="centerX" id="R5p-Xa-Zmu"/>
-                            <constraint firstItem="Fr2-z0-4l9" firstAttribute="top" secondItem="Jjk-IW-DUb" secondAttribute="bottom" constant="50" id="eim-Om-e2a"/>
-                            <constraint firstItem="GGc-FO-0I9" firstAttribute="centerX" secondItem="Fr2-z0-4l9" secondAttribute="centerX" id="nqL-HQ-gMg"/>
-                            <constraint firstItem="Fr2-z0-4l9" firstAttribute="leading" secondItem="7bx-IL-hmf" secondAttribute="leadingMargin" constant="49" id="qe5-x8-bs5"/>
+                            <constraint firstItem="soN-bd-8aC" firstAttribute="top" secondItem="Fr2-z0-4l9" secondAttribute="bottom" constant="493" id="4kl-QM-4UI"/>
+                            <constraint firstItem="GGc-FO-0I9" firstAttribute="trailing" secondItem="yP2-KR-iKk" secondAttribute="trailing" id="GtH-86-pm2"/>
+                            <constraint firstItem="Fr2-z0-4l9" firstAttribute="top" secondItem="FlU-2v-PsR" secondAttribute="bottom" constant="8" symbolic="YES" id="SMH-6F-iAt"/>
+                            <constraint firstItem="soN-bd-8aC" firstAttribute="top" secondItem="Fr2-z0-4l9" secondAttribute="bottom" constant="49" id="Sva-01-nmo"/>
+                            <constraint firstItem="Jjk-IW-DUb" firstAttribute="centerY" secondItem="7bx-IL-hmf" secondAttribute="centerY" id="UFN-iw-4OL"/>
+                            <constraint firstItem="Fr2-z0-4l9" firstAttribute="leading" secondItem="7bx-IL-hmf" secondAttribute="leadingMargin" constant="24" id="UGP-RT-SeO"/>
+                            <constraint firstItem="Fr2-z0-4l9" firstAttribute="leading" secondItem="7bx-IL-hmf" secondAttribute="leadingMargin" constant="4" id="bAr-U2-fp6"/>
+                            <constraint firstItem="yP2-KR-iKk" firstAttribute="centerX" secondItem="7bx-IL-hmf" secondAttribute="centerX" id="edP-qi-RG3"/>
+                            <constraint firstItem="Jjk-IW-DUb" firstAttribute="top" secondItem="yP2-KR-iKk" secondAttribute="bottom" constant="52" id="qsa-ZQ-dOz"/>
+                            <constraint firstItem="yP2-KR-iKk" firstAttribute="centerX" secondItem="Jjk-IW-DUb" secondAttribute="centerX" id="rC2-Ux-NPI"/>
+                            <constraint firstItem="yP2-KR-iKk" firstAttribute="top" secondItem="GGc-FO-0I9" secondAttribute="bottom" constant="34" id="rF4-HG-t4d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Fr2-z0-4l9" secondAttribute="trailing" constant="10" id="s1f-x4-0pk"/>
+                            <constraint firstItem="Fr2-z0-4l9" firstAttribute="top" secondItem="Jjk-IW-DUb" secondAttribute="bottom" constant="36" id="sDu-qE-e9m"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="SMH-6F-iAt"/>
+                                <exclude reference="bAr-U2-fp6"/>
+                                <exclude reference="4kl-QM-4UI"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Signout Page " id="5jA-qn-X9y"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -96,6 +147,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5E-an-Bbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="xH2-iA-vnI">
+                    <connections>
+                        <action selector="selectImagefromLibrary:" destination="Pwr-aF-wpe" id="kLt-xm-SJA"/>
+                        <outlet property="delegate" destination="7bx-IL-hmf" id="30V-0n-lDP"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1729.5" y="367.5"/>
         </scene>
