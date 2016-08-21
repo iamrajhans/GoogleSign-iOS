@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController ,GIDSignInUIDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     
     
-  
+    
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var SignInButton: GIDSignInButton!
     
@@ -43,6 +43,18 @@ class ViewController: UIViewController ,GIDSignInUIDelegate,UIImagePickerControl
         // Do any additional setup after loading the view, typically from a nib.
         
         GIDSignIn.sharedInstance().uiDelegate = self
+        load_image("https://lh3.googleusercontent.com/-kkdLLOyn4-g/AAAAAAAAAAI/AAAAAAAAGvw/ooj6qPYe3Ds/s100/photo.jpg")
+    }
+    
+    func load_image(urlString:String)
+    {
+        let imgURL: NSURL = NSURL(string: urlString)!
+        let request: NSURLRequest = NSURLRequest(URL: imgURL)
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(),completionHandler: {(response: NSURLResponse?,data: NSData?,error: NSError?) -> Void in
+            if error == nil {
+                self.imageView.image = UIImage(data: data!)
+            }
+        })
         
     }
     
