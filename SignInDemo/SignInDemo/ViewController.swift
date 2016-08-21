@@ -60,24 +60,25 @@ class ViewController: UIViewController ,GIDSignInUIDelegate,UIImagePickerControl
     }
     
     @IBAction func actionSheetButton(sender: UIBarButtonItem) {
-        // Action sheet popup
+        //MARK: - Action sheet popup
         let alert = UIAlertController(title: "Action sheet ", message: "This is desc for action sheet", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        // for ipad to show popup 
+        // for ipad to show action sheet popup as alert popup
         alert.modalPresentationStyle = .Popover
         let ppc = alert.popoverPresentationController
         ppc?.barButtonItem = actionsheetBarButtonItem
         
         
-        alert.addAction(UIAlertAction(
-            title: "Test", style: UIAlertActionStyle.Default)
-            { (action: UIAlertAction) -> Void in
-            
+        alert.addAction(UIAlertAction(title: "Test", style: UIAlertActionStyle.Default)
+        { (action: UIAlertAction) -> Void in
+            let popup = self.alertPopup()
+            self.presentViewController(popup, animated: true, completion: nil)
             })
         
-        alert.addAction(UIAlertAction(
-        title: "Test 2",style: .Default){
+        
+        alert.addAction(UIAlertAction(title: "Test 2",style: .Default){
             (action: UIAlertAction) -> Void in
-            
+            let popup = self.alertPopup()
+            self.presentViewController(popup, animated: true, completion: nil)
             })
         
         alert.addAction(UIAlertAction(title: "Red",style: .Destructive){
@@ -89,8 +90,9 @@ class ViewController: UIViewController ,GIDSignInUIDelegate,UIImagePickerControl
             (action: UIAlertAction) -> Void in
             
             })
+        
         presentViewController(alert, animated: true, completion: nil)
-
+        
     }
     func signIn(signIn: GIDSignIn!, presentViewController viewController: UIViewController!) {
         self.presentViewController(viewController, animated: true, completion: nil)
@@ -102,6 +104,35 @@ class ViewController: UIViewController ,GIDSignInUIDelegate,UIImagePickerControl
     
     func signInWillDispatch(signIn: GIDSignIn!, error: NSError!) {
         //
+    }
+    
+    
+    //MARK: - alert popup
+    
+    func alertPopup() -> UIAlertController {
+        let alertpopup = UIAlertController(title: "Login alert Popup",message: "Need Login......",preferredStyle: UIAlertControllerStyle.Alert)
+        //textfield
+        alertpopup.addTextFieldWithConfigurationHandler { (textField) in
+            textField.placeholder = "Enter Password..."
+            textField.secureTextEntry = true
+            
+        }
+        
+        
+        alertpopup.addAction(UIAlertAction(title: "Login", style: UIAlertActionStyle.Default)
+        {
+            (action:UIAlertAction) -> Void in
+            let textfield = alertpopup.textFields?.first?.text
+            print(textfield)
+            }
+        )
+        
+        alertpopup.addAction(UIAlertAction(title: "Cancel",style: .Cancel)
+        {
+            (action: UIAlertAction) -> Void in
+            
+            })
+        return alertpopup
     }
     
 }
