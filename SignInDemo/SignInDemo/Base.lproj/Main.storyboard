@@ -22,35 +22,45 @@
                                 <rect key="frame" x="92" y="310" width="190" height="47"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qc8-mf-DgI">
-                                <rect key="frame" x="63" y="405" width="248" height="128"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1u-Tc-6Ss">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E1u-Tc-6Ss">
                                 <rect key="frame" x="20" y="579" width="94" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="EQE-kE-AF2"/>
+                                </constraints>
                                 <state key="normal" title="Take photo"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mhe-hX-fo7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf8-g5-jrI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bf8-g5-jrI">
                                 <rect key="frame" x="246" y="579" width="109" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109" id="bqz-2N-sRB"/>
+                                </constraints>
                                 <state key="normal" title="Select image"/>
                                 <connections>
                                     <action selector="selectPhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sDq-SW-vGk"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qc8-mf-DgI">
+                                <rect key="frame" x="105" y="404" width="165" height="165"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="76" id="8bf-P6-01J"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qc8-mf-DgI" secondAttribute="bottom" constant="134" id="Ksi-gm-blp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Qc8-mf-DgI" secondAttribute="trailing" constant="48" id="Uex-re-7mY"/>
-                            <constraint firstItem="Qc8-mf-DgI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="47" id="icp-6f-oKY"/>
-                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kCn-rl-v2H"/>
-                            <constraint firstItem="Qc8-mf-DgI" firstAttribute="top" secondItem="7f2-1i-ePQ" secondAttribute="bottom" constant="48" id="miF-Fs-rKP"/>
-                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="246" id="rgP-hH-lT8"/>
-                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y49-Al-hZ4"/>
+                            <constraint firstItem="E1u-Tc-6Ss" firstAttribute="baseline" secondItem="Bf8-g5-jrI" secondAttribute="baseline" id="2GO-iP-Q1f"/>
+                            <constraint firstItem="Qc8-mf-DgI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="89" id="2mi-Q6-cJv"/>
+                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="centerX" secondItem="Qc8-mf-DgI" secondAttribute="centerX" id="3sO-Qi-Em6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="E1u-Tc-6Ss" secondAttribute="bottom" constant="58" id="5un-nF-BBq"/>
+                            <constraint firstItem="E1u-Tc-6Ss" firstAttribute="top" secondItem="Qc8-mf-DgI" secondAttribute="bottom" constant="10" id="7FP-UX-nYz"/>
+                            <constraint firstItem="E1u-Tc-6Ss" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="4" id="BKp-NW-WyQ"/>
+                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Cph-d0-9pE"/>
+                            <constraint firstItem="Qc8-mf-DgI" firstAttribute="top" secondItem="7f2-1i-ePQ" secondAttribute="bottom" constant="47" id="LsL-lb-jQ1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bf8-g5-jrI" secondAttribute="trailing" constant="4" id="O8u-of-QHl"/>
+                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="76" id="QNY-z1-PTr"/>
+                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="246" id="V21-js-yv5"/>
+                            <constraint firstItem="7f2-1i-ePQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gCs-Fv-qMd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SignIn" id="8OV-ZF-SXI"/>
