@@ -26,12 +26,17 @@ class ViewController: UIViewController ,GIDSignInUIDelegate,UIImagePickerControl
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
+        imageView.layer.cornerRadius = imageView.frame.size.width / 2
+        imageView.clipsToBounds = true
         imageView.image = image
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func takePhoto(sender: UIButton) {
+        let takePic = UIImagePickerController()
+        takePic.delegate = self
+        takePic.sourceType = UIImagePickerControllerSourceType.Camera
+        presentViewController(takePic, animated: true, completion: nil)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
