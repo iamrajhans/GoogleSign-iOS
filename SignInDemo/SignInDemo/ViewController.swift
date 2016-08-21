@@ -12,6 +12,7 @@ class ViewController: UIViewController ,GIDSignInUIDelegate,UIImagePickerControl
     
     
     
+    @IBOutlet weak var actionsheetBarButtonItem: UIBarButtonItem!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var SignInButton: GIDSignInButton!
     
@@ -58,6 +59,39 @@ class ViewController: UIViewController ,GIDSignInUIDelegate,UIImagePickerControl
         
     }
     
+    @IBAction func actionSheetButton(sender: UIBarButtonItem) {
+        // Action sheet popup
+        let alert = UIAlertController(title: "Action sheet ", message: "This is desc for action sheet", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        // for ipad to show popup 
+        alert.modalPresentationStyle = .Popover
+        let ppc = alert.popoverPresentationController
+        ppc?.barButtonItem = actionsheetBarButtonItem
+        
+        
+        alert.addAction(UIAlertAction(
+            title: "Test", style: UIAlertActionStyle.Default)
+            { (action: UIAlertAction) -> Void in
+            
+            })
+        
+        alert.addAction(UIAlertAction(
+        title: "Test 2",style: .Default){
+            (action: UIAlertAction) -> Void in
+            
+            })
+        
+        alert.addAction(UIAlertAction(title: "Red",style: .Destructive){
+            (action: UIAlertAction) -> Void in
+            
+            })
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel){
+            (action: UIAlertAction) -> Void in
+            
+            })
+        presentViewController(alert, animated: true, completion: nil)
+
+    }
     func signIn(signIn: GIDSignIn!, presentViewController viewController: UIViewController!) {
         self.presentViewController(viewController, animated: true, completion: nil)
     }

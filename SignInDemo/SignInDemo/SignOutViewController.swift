@@ -18,19 +18,18 @@ class SignOutViewController: UIViewController ,GIDSignInUIDelegate,UIImagePicker
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        if GIDSignIn.sharedInstance().hasAuthInKeychain() {
+            if GIDSignIn.sharedInstance().hasAuthInKeychain() {
             let user = GIDSignIn.sharedInstance().currentUser
             emailAddress?.text = user.profile?.email
             username?.text = user.profile?.name
             print("\(user.profile?.name)")
             print("\(user.profile?.email)")
             print("\(user.profile?.imageURLWithDimension(100))")
-//            if let url = NSURL(string: "\(user.profile?.imageURLWithDimension(100) )"){
-//                userProfileImage.contentMode = .ScaleAspectFit
-//                downloadImage(url)
-//                
-//            }
+            //            if let url = NSURL(string: "\(user.profile?.imageURLWithDimension(100) )"){
+            //                userProfileImage.contentMode = .ScaleAspectFit
+            //                downloadImage(url)
+            //
+            //            }
             
         }
         // Do any additional setup after loading the view.

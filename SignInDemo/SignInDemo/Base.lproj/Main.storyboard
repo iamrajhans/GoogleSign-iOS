@@ -63,10 +63,17 @@
                             <constraint firstItem="7f2-1i-ePQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="gCs-Fv-qMd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="SignIn" id="8OV-ZF-SXI"/>
+                    <navigationItem key="navigationItem" title="SignIn" id="8OV-ZF-SXI">
+                        <barButtonItem key="rightBarButtonItem" title="Action sheet" id="AF6-9P-Hqy">
+                            <connections>
+                                <action selector="actionSheetButton:" destination="BYZ-38-t0r" id="YrG-ER-z3c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="SignInButton" destination="7f2-1i-ePQ" id="Qag-90-5cR"/>
+                        <outlet property="actionsheetBarButtonItem" destination="AF6-9P-Hqy" id="GIS-jo-w52"/>
                         <outlet property="imageView" destination="Qc8-mf-DgI" id="Ipp-d9-Nti"/>
                     </connections>
                 </viewController>
